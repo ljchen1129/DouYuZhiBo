@@ -11,7 +11,7 @@ import UIKit
 fileprivate let kTitleViewH: CGFloat = 40
 
 class HomeViewController: UIViewController {
-
+    
     // MARK:- 懒加载属性
     fileprivate lazy var pageTitleView: PageTitleView = {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
@@ -19,6 +19,25 @@ class HomeViewController: UIViewController {
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         
         return titleView
+    }()
+    
+    fileprivate lazy var pageContentView: PageContentView = { [weak self] in
+        // 1.确定frame
+        let contentViewY = kStatusBarH + kTitleViewH + kNavigationBarH
+        let contentViewW = kScreenW
+        let contentViewH = kSreenH - contentViewY
+        
+        // 2.添加子控制器
+        var childVcs = [UIViewController]()
+        for _ in 0..<4 {
+            let childVc = UIViewController()
+            childVc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255))/255.0, g: CGFloat(arc4random_uniform(255))/255.0, b: CGFloat(arc4random_uniform(255))/255.0)
+            childVcs.append(childVc)
+        }
+        
+        let frame = CGRect(x: 0, y: contentViewY, width: contentViewW, height: contentViewH)
+        let contentView = PageContentView(frame: frame, childVcs: childVcs, parentsVc: self)
+        return contentView
     }()
     
     // MARK:- 系统回调函数
@@ -33,7 +52,7 @@ class HomeViewController: UIViewController {
 // MARK:- 设置UI界面
 extension HomeViewController {
     fileprivate func setupUI() {
-        // 1.不要调整UIScrollView的内边距
+        // 1.不要调整UIScrollView的内边距，不然系统会自动将scrollView的y坐标加64
         automaticallyAdjustsScrollViewInsets = false
         
         // 2.设置导航栏
@@ -41,6 +60,9 @@ extension HomeViewController {
         
         // 3.添加titleView
         view.addSubview(pageTitleView)
+        
+        // 4.添加contentView
+        view.addSubview(pageContentView)
     }
     
     fileprivate func setupNavigationBar() {

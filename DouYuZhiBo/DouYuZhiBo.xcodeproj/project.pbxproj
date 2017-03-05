@@ -22,6 +22,8 @@
 		5D637A4D1E6ACB89000CFF6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D637A4B1E6ACB89000CFF6F /* LaunchScreen.storyboard */; };
 		5D637A581E6ACB89000CFF6F /* DouYuZhiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D637A571E6ACB89000CFF6F /* DouYuZhiBoTests.swift */; };
 		5D637A631E6ACB89000CFF6F /* DouYuZhiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D637A621E6ACB89000CFF6F /* DouYuZhiBoUITests.swift */; };
+		5DD12CED1E6B995800201EC2 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD12CEC1E6B995800201EC2 /* PageContentView.swift */; };
+		5DD12CEF1E6B9F3800201EC2 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD12CEE1E6B9F3800201EC2 /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		5D637A5E1E6ACB89000CFF6F /* DouYuZhiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouYuZhiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D637A621E6ACB89000CFF6F /* DouYuZhiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouYuZhiBoUITests.swift; sourceTree = "<group>"; };
 		5D637A641E6ACB89000CFF6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DD12CEC1E6B995800201EC2 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		5DD12CEE1E6B9F3800201EC2 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				5D558C951E6B122900E27CBC /* PageTitleView.swift */,
+				5DD12CEC1E6B995800201EC2 /* PageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				5D558C931E6AFE9000E27CBC /* UIBarButtonItem-Extension.swift */,
+				5DD12CEE1E6B9F3800201EC2 /* UIColor-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -472,8 +478,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D501FC21E6AF2B500E58172 /* MainViewController.swift in Sources */,
+				5DD12CEF1E6B9F3800201EC2 /* UIColor-Extension.swift in Sources */,
 				5D637A431E6ACB89000CFF6F /* AppDelegate.swift in Sources */,
 				5D558C961E6B122900E27CBC /* PageTitleView.swift in Sources */,
+				5DD12CED1E6B995800201EC2 /* PageContentView.swift in Sources */,
 				5D558C941E6AFE9000E27CBC /* UIBarButtonItem-Extension.swift in Sources */,
 				5D558C981E6B157300E27CBC /* Common.swift in Sources */,
 				5D558C911E6AF85100E27CBC /* HomeViewController.swift in Sources */,
